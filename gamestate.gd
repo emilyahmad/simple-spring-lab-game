@@ -4,6 +4,9 @@ var block_mass
 var block_velocity
 var spring_constant
 
+var start_simulation = false
+
+var end_simulation = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,3 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("escape"):
 		get_tree().quit()
+
+#func simulate():
+	#print("start")

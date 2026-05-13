@@ -1,26 +1,25 @@
 extends RigidBody2D
 
-#scene starts with block moving <-- (block speed)
-var speed = 300
+# store initial position so we can reset to it
+# when we rerun the simulation
+#var initial_pos = Vector2(929.0, 526.0)
 
 func _spring():
 	pass
 
-#mass = Gamestate.block_mass
-#meow
-#init baby
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	linear_velocity.x = -500
-	Gamestate.block_velocity = linear_velocity.x
+	# get initial position
+	#initial_pos = global_position
+	# reset values
+	angular_velocity = 0.0
+	linear_velocity = Vector2.ZERO
+	#global_position = initial_pos
+	print(Gamestate.block_velocity)
+	#linear_velocity.x = -(Gamestate.block_velocity)
+	linear_velocity.x = -500.
+	#mass = Gamestate.block_mass
+	mass = 500.
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("increase_mass"):
-		mass += 1
-		#Gamestate.block_mass = mass
-		#print(mass)
-	#
-	#var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	#var velocity = direction * speed
+	pass
