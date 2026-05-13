@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c54q1k6eufgug"]
+
+[ext_resource type="Script" uid="uid://2qdtbuljlunu" path="res://simple-spring-lab-game/spring.gd" id="1_boyml"]
+[ext_resource type="Texture2D" uid="uid://6frired2spap" path="res://simple-spring-lab-game/icon.svg" id="1_ka4py"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boyml"]
+size = Vector2(126, 127)
+
+[node name="Node2D" type="Area2D"]
+scale = Vector2(4.32, 1)
+script = ExtResource("1_boyml")
+
+[node name="thing" type="Sprite2D" parent="."]
+texture = ExtResource("1_ka4py")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_boyml")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
